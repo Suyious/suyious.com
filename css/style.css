@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;900&display=swap');
+
+:root {
+    --primary-background: #325FFF;
+    --primary-foreground: #fff;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    background: var(--primary-background);
+    color: var(--primary-foreground);
+    scroll-behavior: smooth;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Helper for sidebar visibility */
+@media all and (max-width: 720px) {
+    .sidebar_main {
+        display: none;
+    }
+}

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suyash K. | Dev Portfolio</title>
+    <meta name="description"
+        content="Suyash Kumar — Software Developer. I adapt to any stack, build fast, and ship things that matter." />
+    <meta property="og:title" content="Suyash K. | Dev Portfolio | Web Developer" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="OG-IMAGE.jpg" />
+    <meta property="og:url" content="https://suyashk.vercel.app" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:description" content="Web Developer Portfolio showcasing works by Suyash K." />
+    <meta property="og:site_name" content="Suyash K. Dev Portfolio" />
+    <meta name="twitter:image:alt" content="Suyash K. | Dev Portfolio" />
+    <meta property="fb:app_id" content="suyashk" />
+    <meta name="twitter:site" content="@suyashk" />
+    <link rel="icon" href="favicon.ico" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#325FFF',
+                        foreground: '#fff',
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-primary text-foreground font-sans">
+
+    <!-- Navbar -->
+    <div class="fixed top-0 left-0 w-full z-50">
+        <div class="w-[90vw] min-h-[5em] mx-auto flex items-center justify-between text-white">
+            <div class="nav-left">
+                <a href="index.html" class="hidden" id="nav-brand">
+                    <h3 class="font-bold text-lg">Suyash k.</h3>
+                </a>
+            </div>
+            <div class="nav-right relative">
+                <!-- Hamburger -->
+                <div id="hamburger"
+                    class="p-4 flex flex-col gap-[0.2em] cursor-pointer bg-primary border-2 border-white rounded-[5px] shadow-[1px_4px_10px_rgba(0,0,0,0.27)] md:hidden">
+                    <div class="w-[2em] h-[0.4em] bg-white rounded-[2px]"></div>
+                    <div class="w-[2em] h-[0.4em] bg-white rounded-[2px]"></div>
+                </div>
+
+                <!-- Overlay -->
+                <div id="nav-overlay"
+                    class="hidden fixed top-0 left-0 bg-[#0005] w-screen h-screen translate-x-[150%] transition-transform duration-300 ease-in md:hidden">
+                </div>
+
+                <!-- Links -->
+                <div id="nav-links"
+                    class="flex justify-end items-center md:flex md:flex-row md:static md:translate-x-0 md:bg-transparent md:h-auto md:w-auto md:gap-0
+                    fixed top-[6em] right-[1em] z-10 flex-col items-end translate-x-[150%] transition-transform duration-300 ease-in bg-transparent">
+
+                    <a href="#projects"
+                        class="nav-link block p-[1em_1em_1em_3em] text-[1.2em] font-black cursor-pointer relative group">
+                        projects
+                        <span
+                            class="absolute bottom-0 left-0 h-[4px] bg-white w-0 rounded-[0_4px_4px_0] transition-[width] duration-300 ease-in group-hover:w-full"></span>
+                    </a>
+                    <a href="developer/index.html"
+                        class="nav-link block p-[1em_1em_1em_3em] text-[1.2em] font-black cursor-pointer relative group">
+                        developer
+                        <span
+                            class="absolute bottom-0 left-0 h-[4px] bg-white w-0 rounded-[0_4px_4px_0] transition-[width] duration-300 ease-in group-hover:w-full"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Left Sidebar -->
+    <div class="sidebar_main fixed z-10 h-full left-0 top-0 hidden md:block">
+        <div class="h-full flex items-center justify-center">
+            <div class="flex flex-col gap-[3em]">
+                <a href="https://instagram.com/suy.yes/" target="_blank" title="Instagram" class="px-[2em]">
+                    <img src="icons/Instagram.svg" class="w-8 h-[31px]">
+                </a>
+                <a href="https://github.com/suyious" target="_blank" title="Github" class="px-[2em]">
+                    <img src="icons/Github.svg" class="w-8 h-[31px]">
+                </a>
+                <a href="https://linkedin.com/in/suyash1621/" target="_blank" title="LinkedIn" class="px-[2em]">
+                    <img src="icons/LinkedIn.svg" class="w-8 h-[31px]">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Sidebar -->
+    <div class="sidebar_main fixed z-10 h-full right-0 top-0 hidden md:block">
+        <div class="h-full flex items-center justify-center">
+            <div class="flex flex-col gap-[3em]">
+                <a href="mailto:suyu162001@gmail.com" title="Email" class="px-[2em]">
+                    <img src="icons/Mail.svg" class="w-8 h-[31px]">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="app" class="font-sans text-white min-h-screen">
+
+        <!-- Hero Section -->
+        <div id="hero" class="min-h-screen flex items-center justify-center relative">
+            <div class="text-center px-4">
+                <p class="text-[1.8em] font-black leading-none mb-2 opacity-80">Hi, I&apos;m</p>
+                <h1 class="text-[10em] font-black leading-none lg:text-[10em] md:text-[7em] sm:text-[5em] text-[4em]">
+                    Suyash K.</h1>
+
+                <!-- Tag list with dot separators -->
+                <div class="flex items-center justify-center gap-3 mt-4 flex-wrap">
+                    <span class="font-black text-[1.4em]">web developer</span>
+                    <span class="w-2 h-2 rounded-full bg-white opacity-50 flex-shrink-0"></span>
+                    <span class="font-black text-[1.4em]">creative builder</span>
+                    <span class="w-2 h-2 rounded-full bg-white opacity-50 flex-shrink-0"></span>
+                    <span class="font-black text-[1.4em]">problem solver</span>
+                </div>
+
+                <!-- Buttons -->
+                <div class="flex justify-center gap-4 mt-8 flex-wrap">
+                    <a href="developer/index.html"
+                        class="bg-white text-primary font-bold px-[2em] py-[0.6em] rounded-[5px] transition-all duration-300 hover:opacity-90 hover:scale-105">
+                        more about me
+                    </a>
+                    <a href="#projects"
+                        class="border-2 border-white font-bold px-[2em] py-[0.6em] rounded-[5px] transition-all duration-300 hover:bg-white hover:text-primary">
+                        see my work
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Strip -->
+        <div class="border-t border-white/20 py-[4em]">
+            <div class="w-[90%] max-w-[80vw] mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                    <div>
+                        <div class="text-[2.5em] mb-2">⚡</div>
+                        <h3 class="font-black text-[1.1em] mb-1">Adapts Fast</h3>
+                        <p class="opacity-70 text-[0.95em] leading-relaxed">New stack, new tools — I get up to speed
+                            quickly and don't get attached to any one way of doing things.</p>
+                    </div>
+                    <div>
+                        <div class="text-[2.5em] mb-2">🤖</div>
+                        <h3 class="font-black text-[1.1em] mb-1">AI-Native</h3>
+                        <p class="opacity-70 text-[0.95em] leading-relaxed">I use AI assistants as a core part of my
+                            workflow — not as a shortcut, but as a multiplier for speed and quality.</p>
+                    </div>
+                    <div>
+                        <div class="text-[2.5em] mb-2">🎨</div>
+                        <h3 class="font-black text-[1.1em] mb-1">Builds to Matter</h3>
+                        <p class="opacity-70 text-[0.95em] leading-relaxed">I care about shipping things that are
+                            actually useful. I thrive in creative roles where I can shape the product.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div id="projects" class="max-w-[100vw] overflow-hidden mb-[3em] pt-[2em]">
+            <div class="w-[90%] max-w-[80vw] mx-auto">
+
+                <!-- Section Header -->
+                <div class="mb-[2em]">
+                    <p class="text-[1em] font-semibold opacity-50 tracking-widest uppercase mb-1">selected works</p>
+                    <h2 class="text-[2.5em] font-black leading-tight">projects</h2>
+                </div>
+
+                <!-- Carousel wrapper: buttons sit outside the overflow-hidden track -->
+                <div class="relative">
+
+                    <!-- Prev Button -->
+                    <button id="projects-prev" class="hidden absolute top-1/2 -translate-y-1/2 left-[-4em] z-10
+                               w-[3em] h-[3em] rounded-full border-2 border-white/60
+                               flex items-center justify-center
+                               hover:bg-white hover:border-white transition-all duration-200 group">
+                        <svg class="w-5 h-5 fill-white group-hover:fill-primary transition-colors" viewBox="0 0 24 24">
+                            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+                        </svg>
+                    </button>
+
+                    <!-- Track -->
+                    <div class="overflow-hidden w-full">
+                        <div id="projects-track" class="flex transition-transform duration-500 ease-in-out"
+                            style="transform: translateX(0%);">
+
+                            <!-- Project card macro: repeat for each project -->
+                            <!-- 1: Purrr.chat -->
+                            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-2">
+                                <div class="relative w-full aspect-video overflow-hidden rounded-xl group"
+                                    title="Purrr.chat | Random Stranger Chat">
+                                    <img src="https://purrr-chat.vercel.app/opengraph-image.jpg"
+                                        class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-500"
+                                        alt="Purrr.chat">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
+                                    </div>
+                                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                                        <p class="font-black text-[0.9em] mb-3 drop-shadow">Purrr.chat — Random Stranger
+                                            Chat</p>
+                                        <div class="flex gap-2">
+                                            <a href="https://purrr-chat.vercel.app/" target="_blank"
+                                                class="bg-white text-primary font-bold text-sm px-4 py-1.5 rounded-md hover:opacity-90 transition-opacity">Visit
+                                                ↗</a>
+                                            <a href="https://github.com/suyious/purrr.frontend" target="_blank"
+                                                class="border border-white/70 text-white font-bold text-sm px-4 py-1.5 rounded-md hover:bg-white/10 transition-colors">Source</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 2: Colloquial -->
+                            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-2">
+                                <div class="relative w-full aspect-video overflow-hidden rounded-xl group"
+                                    title="Colloquial | Minimalist Social Media">
+                                    <img src="https://colloquial.vercel.app/OG-IMAGE.jpg"
+                                        class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-500"
+                                        alt="Colloquial">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
+                                    </div>
+                                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                                        <p class="font-black text-[0.9em] mb-3 drop-shadow">Colloquial — Minimalist
+                                            Social Media</p>
+                                        <div class="flex gap-2">
+                                            <a href="https://colloquial.vercel.app/" target="_blank"
+                                                class="bg-white text-primary font-bold text-sm px-4 py-1.5 rounded-md hover:opacity-90 transition-opacity">Visit
+                                                ↗</a>
+                                            <a href="https://github.com/suyious/colloquial" target="_blank"
+                                                class="border border-white/70 text-white font-bold text-sm px-4 py-1.5 rounded-md hover:bg-white/10 transition-colors">Source</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 3: Fraise -->
+                            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-2">
+                                <div class="relative w-full aspect-video overflow-hidden rounded-xl group"
+                                    title="Fraise | Read and Write Blogs">
+                                    <img src="https://fraise.netlify.app/OG-IMAGE.jpg"
+                                        class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-500"
+                                        alt="Fraise">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
+                                    </div>
+                                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                                        <p class="font-black text-[0.9em] mb-3 drop-shadow">Fraise — Read and Write
+                                            Blogs</p>
+                                        <div class="flex gap-2">
+                                            <a href="https://suyious.github.io/fraise" target="_blank"
+                                                class="bg-white text-primary font-bold text-sm px-4 py-1.5 rounded-md hover:opacity-90 transition-opacity">Visit
+                                                ↗</a>
+                                            <a href="https://github.com/suyious/fraise" target="_blank"
+                                                class="border border-white/70 text-white font-bold text-sm px-4 py-1.5 rounded-md hover:bg-white/10 transition-colors">Source</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 4: Photopptx -->
+                            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-2">
+                                <div class="relative w-full aspect-video overflow-hidden rounded-xl group"
+                                    title="Photopptx | Turn images to Presentation">
+                                    <img src="https://photopptx.vercel.app/OG-IMAGE.jpg"
+                                        class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-500"
+                                        alt="Photopptx">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
+                                    </div>
+                                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                                        <p class="font-black text-[0.9em] mb-3 drop-shadow">Photopptx — Images to
+                                            Presentation</p>
+                                        <div class="flex gap-2">
+                                            <a href="https://photopptx.vercel.app/" target="_blank"
+                                                class="bg-white text-primary font-bold text-sm px-4 py-1.5 rounded-md hover:opacity-90 transition-opacity">Visit
+                                                ↗</a>
+                                            <a href="https://github.com/suyious/photopptx" target="_blank"
+                                                class="border border-white/70 text-white font-bold text-sm px-4 py-1.5 rounded-md hover:bg-white/10 transition-colors">Source</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 5: Gitpdf -->
+                            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-2">
+                                <div class="relative w-full aspect-video overflow-hidden rounded-xl group"
+                                    title="Gitpdf | Turn Github Repository to PDF">
+                                    <img src="https://raw.githubusercontent.com/Suyious/gitpdf/refs/heads/master/static/OG-IMAGE.jpg"
+                                        class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-500"
+                                        alt="Gitpdf">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
+                                    </div>
+                                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                                        <p class="font-black text-[0.9em] mb-3 drop-shadow">Gitpdf — Github Repo to PDF
+                                        </p>
+                                        <div class="flex gap-2">
+                                            <a href="https://gitpdf.onrender.com/" target="_blank"
+                                                class="bg-white text-primary font-bold text-sm px-4 py-1.5 rounded-md hover:opacity-90 transition-opacity">Visit
+                                                ↗</a>
+                                            <a href="https://github.com/Suyious/gitpdf" target="_blank"
+                                                class="border border-white/70 text-white font-bold text-sm px-4 py-1.5 rounded-md hover:bg-white/10 transition-colors">Source</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 6: BCSP064 -->
+                            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-2">
+                                <div class="relative w-full aspect-video overflow-hidden rounded-xl group"
+                                    title="BCSP064 | Mock Test Conducting System">
+                                    <img src="https://bcsp064.netlify.app/OG-IMAGE.jpg"
+                                        class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-500"
+                                        alt="BCSP064">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
+                                    </div>
+                                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                                        <p class="font-black text-[0.9em] mb-3 drop-shadow">BCSP064 — Mock Test System
+                                        </p>
+                                        <div class="flex gap-2">
+                                            <a href="https://bcsp064.netlify.app/" target="_blank"
+                                                class="bg-white text-primary font-bold text-sm px-4 py-1.5 rounded-md hover:opacity-90 transition-opacity">Visit
+                                                ↗</a>
+                                            <a href="https://github.com/Suyious/GradProjectClientMVP/" target="_blank"
+                                                class="border border-white/70 text-white font-bold text-sm px-4 py-1.5 rounded-md hover:bg-white/10 transition-colors">Source</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 7: Othello -->
+                            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-2">
+                                <div class="relative w-full aspect-video overflow-hidden rounded-xl group"
+                                    title="Othello | Task Management Tool">
+                                    <img src="https://oth.netlify.app/assets/OG-IMAGE.jpg"
+                                        class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-500"
+                                        alt="Othello">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
+                                    </div>
+                                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                                        <p class="font-black text-[0.9em] mb-3 drop-shadow">Othello — Task Management
+                                            Tool</p>
+                                        <div class="flex gap-2">
+                                            <a href="https://oth.netlify.app/" target="_blank"
+                                                class="bg-white text-primary font-bold text-sm px-4 py-1.5 rounded-md hover:opacity-90 transition-opacity">Visit
+                                                ↗</a>
+                                            <a href="https://github.com/Suyious/Othello" target="_blank"
+                                                class="border border-white/70 text-white font-bold text-sm px-4 py-1.5 rounded-md hover:bg-white/10 transition-colors">Source</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Next Button -->
+                    <button id="projects-next" class="absolute top-1/2 -translate-y-1/2 right-[-4em] z-10
+                               w-[3em] h-[3em] rounded-full border-2 border-white/60
+                               flex items-center justify-center
+                               hover:bg-white hover:border-white transition-all duration-200 group">
+                        <svg class="w-5 h-5 fill-white group-hover:fill-primary transition-colors" viewBox="0 0 24 24">
+                            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                        </svg>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div id="skills" class="min-h-[20em] max-w-[100vw] overflow-hidden mb-[3em] sm:hidden">
+            <div class="w-[90%] max-w-[80vw] mx-auto">
+                <h2 class="text-[2em] mb-[0.3em]">skills</h2>
+                <p class="font-normal text-[1.1em] relative mb-[1.5em] cursor-default group">
+                    - and here are few skills i&apos;ve acquired
+                    <span
+                        class="absolute bottom-[-0.5em] left-[12em] w-[5em] h-[3px] bg-white rounded-[5px] transition-[left,width] duration-500 ease-out group-hover:left-[1em] group-hover:w-[10em]"></span>
+                </p>
+
+                <!-- Carousel -->
+                <div class="relative w-full">
+                    <div id="skills-prev"
+                        class="absolute top-0 bottom-0 left-[-3em] w-[3em] flex items-center justify-center cursor-pointer hover:scale-125 transition-transform z-10 hidden">
+                        <img src="icons/Previous.svg" class="w-8 h-8 filter brightness-0 invert">
+                    </div>
+
+                    <div class="overflow-hidden w-full">
+                        <div id="skills-track" class="flex transition-transform duration-500 ease-in-out"
+                            style="transform: translateX(0%);">
+                            <div class="w-1/3 md:w-1/5 lg:w-[14.28%] flex-shrink-0 p-4" title="React"><img
+                                    src="icons/skills/ReactIcon.svg" class="w-full"></div>
+                            <div class="w-1/3 md:w-1/5 lg:w-[14.28%] flex-shrink-0 p-4" title="Next.js"><img
+                                    src="icons/skills/NextIcon.svg" class="w-full"></div>
+                            <div class="w-1/3 md:w-1/5 lg:w-[14.28%] flex-shrink-0 p-4" title="Node.js"><img
+                                    src="icons/skills/NodeIcon.svg" class="w-full"></div>
+                            <div class="w-1/3 md:w-1/5 lg:w-[14.28%] flex-shrink-0 p-4" title="Express.js"><img
+                                    src="icons/skills/Express.svg" class="w-full"></div>
+                            <div class="w-1/3 md:w-1/5 lg:w-[14.28%] flex-shrink-0 p-4" title="Typescript"><img
+                                    src="icons/skills/Typescript.svg" class="w-full"></div>
+                            <div class="w-1/3 md:w-1/5 lg:w-[14.28%] flex-shrink-0 p-4" title="Javascript"><img
+                                    src="icons/skills/Javascript.svg" class="w-full"></div>
+                            <div class="w-1/3 md:w-1/5 lg:w-[14.28%] flex-shrink-0 p-4" title="HTML"><img
+                                    src="icons/skills/Html.svg" class="w-full"></div>
+                            <div class="w-1/3 md:w-1/5 lg:w-[14.28%] flex-shrink-0 p-4" title="CSS"><img
+                                    src="icons/skills/Css.svg" class="w-full"></div>
+                            <div class="w-1/3 md:w-1/5 lg:w-[14.28%] flex-shrink-0 p-4" title="MongoDB"><img
+                                    src="icons/skills/MongoDB.svg" class="w-full"></div>
+                            <div class="w-1/3 md:w-1/5 lg:w-[14.28%] flex-shrink-0 p-4" title="Version Control"><img
+                                    src="icons/skills/VersionControl.svg" class="w-full"></div>
+                            <div class="w-1/3 md:w-1/5 lg:w-[14.28%] flex-shrink-0 p-4" title="Git"><img
+                                    src="icons/skills/GitIcon.svg" class="w-full"></div>
+                            <div class="w-1/3 md:w-1/5 lg:w-[14.28%] flex-shrink-0 p-4" title="Linux"><img
+                                    src="icons/skills/LinuxIcon.svg" class="w-full"></div>
+                            <div class="w-1/3 md:w-1/5 lg:w-[14.28%] flex-shrink-0 p-4" title="C++"><img
+                                    src="icons/skills/CppIcon.svg" class="w-full"></div>
+                            <div class="w-1/3 md:w-1/5 lg:w-[14.28%] flex-shrink-0 p-4" title="Java"><img
+                                    src="icons/skills/JavaIcon.svg" class="w-full"></div>
+                            <div class="w-1/3 md:w-1/5 lg:w-[14.28%] flex-shrink-0 p-4" title="Python"><img
+                                    src="icons/skills/PythonIcon.svg" class="w-full"></div>
+                        </div>
+                    </div>
+
+                    <div id="skills-next"
+                        class="absolute top-0 bottom-0 right-[-3em] w-[3em] flex items-center justify-center cursor-pointer hover:scale-125 transition-transform z-10">
+                        <img src="icons/Next.svg" class="w-8 h-8 filter brightness-0 invert">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="border-t border-white/20 w-[90%] max-w-[80vw] mx-auto mb-[4em]"></div>
+
+        <!-- What I'm Looking For -->
+        <div class="w-[90%] max-w-[80vw] mx-auto mb-[5em]">
+            <h2 class="text-[2em] font-black mb-2">what I&apos;m looking for</h2>
+            <p class="opacity-70 mb-[2.5em] text-[1.05em]">- the kind of work I do best</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="border border-white/20 rounded-xl p-6 hover:border-white/60 transition-colors">
+                    <h3 class="font-black text-[1.1em] mb-2">Creative ownership</h3>
+                    <p class="opacity-80 leading-relaxed text-[0.95em]">I want to contribute ideas, not just execute
+                        specs. Give me a problem and room to solve it my way.</p>
+                </div>
+                <div class="border border-white/20 rounded-xl p-6 hover:border-white/60 transition-colors">
+                    <h3 class="font-black text-[1.1em] mb-2">Fast-moving teams</h3>
+                    <p class="opacity-80 leading-relaxed text-[0.95em]">I thrive in environments that ship often,
+                        iterate quickly, and aren't afraid to try new things.</p>
+                </div>
+                <div class="border border-white/20 rounded-xl p-6 hover:border-white/60 transition-colors">
+                    <h3 class="font-black text-[1.1em] mb-2">Meaningful products</h3>
+                    <p class="opacity-80 leading-relaxed text-[0.95em]">I care about building things people actually
+                        use. If it solves a real problem, I'm in.</p>
+                </div>
+                <div class="border border-white/20 rounded-xl p-6 hover:border-white/60 transition-colors">
+                    <h3 class="font-black text-[1.1em] mb-2">Modern tech</h3>
+                    <p class="opacity-80 leading-relaxed text-[0.95em]">React, TypeScript, AI tooling — I'm at home in
+                        the modern frontend stack and always picking up what's next.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="border-t border-white/20">
+            <div class="min-h-[20em] bg-transparent flex flex-col items-center justify-center pb-[3em] pt-[3em]">
+                <div class="text-[2em] text-center mb-2 font-black">let&apos;s build something</div>
+                <p class="opacity-70 mb-[2em] text-center max-w-[40ch]">Got something interesting? I&apos;d love to hear
+                    about it.</p>
+                <div class="flex items-center justify-evenly gap-[2em] mb-[2em]">
+                    <a href="https://instagram.com/suy.yes/" target="_blank" title="Instagram"
+                        class="hover:scale-110 transition-transform">
+                        <img src="icons/Instagram.svg" class="w-8 h-8">
+                    </a>
+                    <a href="https://github.com/suyious" target="_blank" title="Github"
+                        class="hover:scale-110 transition-transform">
+                        <img src="icons/Github.svg" class="w-8 h-8">
+                    </a>
+                    <a href="https://linkedin.com/in/suyash1621/" target="_blank" title="LinkedIn"
+                        class="hover:scale-110 transition-transform">
+                        <img src="icons/LinkedIn.svg" class="w-8 h-8">
+                    </a>
+                </div>
+                <div
+                    class="border-2 border-white rounded-[5px] inline-block transition-all duration-500 hover:bg-white hover:text-primary group">
+                    <a href="mailto:suyu162001@gmail.com" class="flex items-center px-[3em] py-[0.3em] gap-2">
+                        <span class="mr-4 font-bold">get in touch</span>
+                        <img src="icons/Mail.svg" class="w-[17px]">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
