@@ -68,8 +68,8 @@ class Carousel {
 
     updateCapacity() {
         const width = window.innerWidth;
-        if (width <= 810) this.capacity = 1;
-        else if (width <= 1200) this.capacity = 2;
+        if (width < 768) this.capacity = 1;
+        else if (width < 1024) this.capacity = 2;
         else this.capacity = 3; // Or derived from constructor if needed to be flexible
 
         // Update item widths based on capacity if needed, but Tailwind handles responsiveness mostly.

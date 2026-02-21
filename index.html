@@ -137,17 +137,17 @@
             </div>
 
             <div class="text-center px-4 z-10">
-                <p class="text-[1.8em] font-black leading-none mb-2 opacity-80">Hi, I&apos;m</p>
-                <h1 class="text-[10em] font-black leading-none lg:text-[10em] md:text-[7em] sm:text-[5em] text-[4em]">
+                <p class="text-[1.2rem] md:text-[1.8em] font-black leading-none mb-2 opacity-80">Hi, I&apos;m</p>
+                <h1 class="text-[4em] sm:text-[5em] md:text-[7em] lg:text-[10em] font-black leading-none">
                     Suyash K.</h1>
 
                 <!-- Tag list with dot separators -->
-                <div class="flex items-center justify-center gap-3 mt-4 flex-wrap">
-                    <span class="font-black text-[1.4em]">web developer</span>
-                    <span class="w-2 h-2 rounded-full bg-white opacity-50 flex-shrink-0"></span>
-                    <span class="font-black text-[1.4em]">creative builder</span>
-                    <span class="w-2 h-2 rounded-full bg-white opacity-50 flex-shrink-0"></span>
-                    <span class="font-black text-[1.4em]">problem solver</span>
+                <div class="flex items-center justify-center gap-2 md:gap-3 mt-4 flex-wrap">
+                    <span class="font-black text-[1rem] md:text-[1.4em]">web developer</span>
+                    <span class="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-white opacity-50 flex-shrink-0"></span>
+                    <span class="font-black text-[1rem] md:text-[1.4em]">creative builder</span>
+                    <span class="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-white opacity-50 flex-shrink-0"></span>
+                    <span class="font-black text-[1rem] md:text-[1.4em]">problem solver</span>
                 </div>
 
                 <!-- Buttons -->
@@ -166,7 +166,7 @@
 
         <!-- About Strip -->
         <div class="border-t border-white/20 py-[4em]">
-            <div class="w-[90%] max-w-[80vw] mx-auto">
+            <div class="w-[92%] md:w-[90%] md:max-w-[80vw] mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
                     <div>
                         <div class="text-[2.5em] mb-2">⚡</div>
@@ -191,8 +191,8 @@
         </div>
 
         <!-- Projects Section -->
-        <div id="projects" class="max-w-[100vw] overflow-hidden mb-[3em] pt-[2em]">
-            <div class="w-[90%] max-w-[80vw] mx-auto">
+        <div id="projects" class="max-w-full overflow-hidden mb-[3em] pt-[2em]">
+            <div class="w-[92%] md:w-[90%] md:max-w-[80vw] mx-auto">
 
                 <!-- Section Header -->
                 <div class="mb-[2em]">
@@ -204,10 +204,10 @@
                 <div class="relative">
 
                     <!-- Prev Button -->
-                    <button id="projects-prev" class="hidden absolute top-1/2 -translate-y-1/2 left-[-4em] z-10
-                               w-[3em] h-[3em] rounded-full border-2 border-white/60
-                               flex items-center justify-center
-                               hover:bg-white hover:border-white transition-all duration-200 group">
+                    <button id="projects-prev" class="hidden absolute top-1/2 -translate-y-1/2 left-2 md:left-[-4em] z-10
+                                w-[2.5em] h-[2.5em] md:w-[3em] md:h-[3em] rounded-full border-2 border-white/60
+                                flex items-center justify-center bg-black/40 md:bg-transparent backdrop-blur-[2px] md:backdrop-blur-none
+                                hover:bg-white hover:border-white transition-all duration-200 group">
                         <svg class="w-5 h-5 fill-white group-hover:fill-primary transition-colors" viewBox="0 0 24 24">
                             <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
                         </svg>
@@ -221,7 +221,7 @@
                             <!-- Project card macro: repeat for each project -->
                             <!-- 1: Purrr.chat -->
                             <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-2">
-                                <div class="relative w-full aspect-video overflow-hidden rounded-xl group"
+                                <div class="relative w-full aspect-[4/3] md:aspect-video overflow-hidden rounded-xl group"
                                     title="Purrr.chat | Random Stranger Chat">
                                     <img src="https://purrr-chat.vercel.app/opengraph-image.jpg"
                                         class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-500"
@@ -245,7 +245,7 @@
 
                             <!-- 2: Colloquial -->
                             <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-2">
-                                <div class="relative w-full aspect-video overflow-hidden rounded-xl group"
+                                <div class="relative w-full aspect-[4/3] md:aspect-video overflow-hidden rounded-xl group"
                                     title="Colloquial | Minimalist Social Media">
                                     <img src="https://colloquial.vercel.app/OG-IMAGE.jpg"
                                         class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-500"
@@ -269,7 +269,7 @@
 
                             <!-- 3: Fraise -->
                             <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-2">
-                                <div class="relative w-full aspect-video overflow-hidden rounded-xl group"
+                                <div class="relative w-full aspect-[4/3] md:aspect-video overflow-hidden rounded-xl group"
                                     title="Fraise | Read and Write Blogs">
                                     <img src="https://fraise.netlify.app/OG-IMAGE.jpg"
                                         class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-500"
@@ -293,7 +293,7 @@
 
                             <!-- 4: Photopptx -->
                             <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-2">
-                                <div class="relative w-full aspect-video overflow-hidden rounded-xl group"
+                                <div class="relative w-full aspect-[4/3] md:aspect-video overflow-hidden rounded-xl group"
                                     title="Photopptx | Turn images to Presentation">
                                     <img src="https://photopptx.vercel.app/OG-IMAGE.jpg"
                                         class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-500"
@@ -317,7 +317,7 @@
 
                             <!-- 5: Gitpdf -->
                             <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-2">
-                                <div class="relative w-full aspect-video overflow-hidden rounded-xl group"
+                                <div class="relative w-full aspect-[4/3] md:aspect-video overflow-hidden rounded-xl group"
                                     title="Gitpdf | Turn Github Repository to PDF">
                                     <img src="https://raw.githubusercontent.com/Suyious/gitpdf/refs/heads/master/static/OG-IMAGE.jpg"
                                         class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-500"
@@ -341,7 +341,7 @@
 
                             <!-- 6: BCSP064 -->
                             <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-2">
-                                <div class="relative w-full aspect-video overflow-hidden rounded-xl group"
+                                <div class="relative w-full aspect-[4/3] md:aspect-video overflow-hidden rounded-xl group"
                                     title="BCSP064 | Mock Test Conducting System">
                                     <img src="https://bcsp064.netlify.app/OG-IMAGE.jpg"
                                         class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-500"
@@ -365,7 +365,7 @@
 
                             <!-- 7: Othello -->
                             <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-2">
-                                <div class="relative w-full aspect-video overflow-hidden rounded-xl group"
+                                <div class="relative w-full aspect-[4/3] md:aspect-video overflow-hidden rounded-xl group"
                                     title="Othello | Task Management Tool">
                                     <img src="https://oth.netlify.app/assets/OG-IMAGE.jpg"
                                         class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-500"
@@ -391,10 +391,10 @@
                     </div>
 
                     <!-- Next Button -->
-                    <button id="projects-next" class="absolute top-1/2 -translate-y-1/2 right-[-4em] z-10
-                               w-[3em] h-[3em] rounded-full border-2 border-white/60
-                               flex items-center justify-center
-                               hover:bg-white hover:border-white transition-all duration-200 group">
+                    <button id="projects-next" class="absolute top-1/2 -translate-y-1/2 right-2 md:right-[-4em] z-10
+                                w-[2.5em] h-[2.5em] md:w-[3em] md:h-[3em] rounded-full border-2 border-white/60
+                                flex items-center justify-center bg-black/40 md:bg-transparent backdrop-blur-[2px] md:backdrop-blur-none
+                                hover:bg-white hover:border-white transition-all duration-200 group">
                         <svg class="w-5 h-5 fill-white group-hover:fill-primary transition-colors" viewBox="0 0 24 24">
                             <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
                         </svg>
@@ -406,10 +406,10 @@
 
 
         <!-- Divider -->
-        <div class="border-t border-white/20 w-[90%] max-w-[80vw] mx-auto mb-[4em]"></div>
+        <div class="border-t border-white/20 w-[92%] md:w-[90%] md:max-w-[80vw] mx-auto mb-[4em]"></div>
 
         <!-- What I'm Looking For -->
-        <div class="w-[90%] max-w-[80vw] mx-auto mb-[5em]">
+        <div class="w-[92%] md:w-[90%] md:max-w-[80vw] mx-auto mb-[5em]">
             <h2 class="text-[2em] font-black mb-2">what I&apos;m looking for</h2>
             <p class="opacity-70 mb-[2.5em] text-[1.05em]">- the kind of work I do best</p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -438,9 +438,12 @@
 
         <!-- Footer -->
         <div class="border-t border-white/20">
-            <div class="min-h-[20em] bg-transparent flex flex-col items-center justify-center pb-[3em] pt-[3em]">
-                <div class="text-[2em] text-center mb-2 font-black">let&apos;s build something</div>
-                <p class="opacity-70 mb-[2em] text-center max-w-[40ch]">Got something interesting? I&apos;d love to hear
+            <div
+                class="min-h-[20em] bg-transparent flex flex-col items-center justify-center pb-[3em] pt-[3em] px-6 md:px-8">
+                <div class="text-[1.8em] md:text-[2em] text-center mb-2 font-black leading-tight">let&apos;s build
+                    something</div>
+                <p class="opacity-70 mb-[2em] text-center max-w-[40ch] leading-relaxed">Got something interesting?
+                    I&apos;d love to hear
                     about it.</p>
                 <div class="flex items-center justify-evenly gap-[2em] mb-[2em]">
                     <a href="https://instagram.com/suy.yes/" target="_blank" title="Instagram"
