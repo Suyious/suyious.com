@@ -116,8 +116,27 @@
     <div id="app" class="font-sans text-white min-h-screen">
 
         <!-- Hero Section -->
-        <div id="hero" class="min-h-screen flex items-center justify-center relative">
-            <div class="text-center px-4">
+        <div id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+            <!-- Background Animation -->
+            <div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
+                <svg class="absolute w-full h-full" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <g transform="translate(500, 500)" stroke="white" stroke-width="2" fill="none">
+                        <polygon points="0,-150 129.9,75 -129.9,75" class="triangle-anim delay-0"
+                            vector-effect="non-scaling-stroke" />
+                        <polygon points="0,-150 129.9,75 -129.9,75" class="triangle-anim delay-1"
+                            vector-effect="non-scaling-stroke" />
+                        <polygon points="0,-150 129.9,75 -129.9,75" class="triangle-anim delay-2"
+                            vector-effect="non-scaling-stroke" />
+                        <polygon points="0,-150 129.9,75 -129.9,75" class="triangle-anim delay-3"
+                            vector-effect="non-scaling-stroke" />
+                        <polygon points="0,-150 129.9,75 -129.9,75" class="triangle-anim delay-4"
+                            vector-effect="non-scaling-stroke" />
+                    </g>
+                </svg>
+            </div>
+
+            <div class="text-center px-4 z-10">
                 <p class="text-[1.8em] font-black leading-none mb-2 opacity-80">Hi, I&apos;m</p>
                 <h1 class="text-[10em] font-black leading-none lg:text-[10em] md:text-[7em] sm:text-[5em] text-[4em]">
                     Suyash K.</h1>
