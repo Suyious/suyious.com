@@ -118,20 +118,3 @@ class Carousel {
 // Need to ensure capacity logic matches CSS breakpoints:
 // sm: w-full (1), md: w-1/2 (2), lg: w-1/3 (3)
 new Carousel('projects-track', 'projects-prev', 'projects-next', '#projects-track > div');
-
-// Skills Carousel
-// CSS: w-1/3 (3), md: w-1/5 (5), lg: w-[14.28%] (7)
-// We need a subclass or config to handle different capacities.
-class SkillsCarousel extends Carousel {
-    updateCapacity() {
-        const width = window.innerWidth;
-        // Logic matching Tailwind classes in skills section
-        if (width < 768) this.capacity = 3;
-        else if (width < 1024) this.capacity = 5;
-        else this.capacity = 7;
-
-        this.updateControls();
-    }
-}
-
-new SkillsCarousel('skills-track', 'skills-prev', 'skills-next', '#skills-track > div');
