@@ -474,6 +474,87 @@
 
     </div>
 
+    <!-- ============================================================
+         CHAT WIDGET
+         ============================================================ -->
+
+    <!-- Chat Toggle Button -->
+    <button id="chat-toggle-btn" aria-label="Open chat"
+        class="fixed bottom-6 right-6 z-50 p-4 flex items-center justify-center gap-2 cursor-pointer bg-primary border-2 border-white rounded-[5px] shadow-[1px_4px_10px_rgba(0,0,0,0.27)] transition-all duration-300 hover:bg-white hover:text-primary group lg:bottom-10 lg:right-10 origin-bottom-right">
+        <span class="font-bold hidden md:block group-hover:text-primary">ask ai</span>
+        <svg class="w-6 h-6 stroke-white group-hover:stroke-primary transition-colors" fill="none" stroke-width="2"
+            stroke-linecap="square" stroke-linejoin="miter" viewBox="0 0 24 24">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+    </button>
+
+    <!-- Chat Window -->
+    <div id="chat-window" class="chat-window fixed z-50 flex flex-col bg-primary border-0 md:border-2 border-white md:shadow-[1px_8px_20px_rgba(0,0,0,0.4)]
+               overflow-hidden transition-all duration-300 ease-in-out
+               opacity-0 pointer-events-none translate-y-4
+               bottom-0 left-0 w-full h-full rounded-none
+               md:bottom-6 md:right-6 md:left-auto md:w-[400px] md:h-[600px] md:rounded-[5px]
+               lg:bottom-10 lg:right-10">
+
+        <!-- Chat Header -->
+        <div class="flex items-center justify-between px-5 py-4 border-b-2 border-white flex-shrink-0 bg-primary">
+            <div class="flex items-center gap-3">
+                <div
+                    class="w-10 h-10 rounded-[5px] border-2 border-white flex items-center justify-center flex-shrink-0 bg-white text-primary">
+                    <svg class="w-6 h-6 stroke-primary" fill="none" stroke-width="2" stroke-linecap="square"
+                        stroke-linejoin="miter" viewBox="0 0 24 24">
+                        <rect x="3" y="11" width="18" height="10" rx="2"></rect>
+                        <circle cx="12" cy="5" r="2"></circle>
+                        <path d="M12 7v4"></path>
+                        <line x1="8" y1="16" x2="8" y2="16"></line>
+                        <line x1="16" y1="16" x2="16" y2="16"></line>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-black text-[1.2em] leading-tight uppercase tracking-wide">Ask AI</h3>
+                    <p class="text-[0.8em] opacity-80 font-bold">Suyash's Assistant</p>
+                </div>
+            </div>
+            <button id="chat-close-btn" aria-label="Close chat"
+                class="w-10 h-10 rounded-[5px] border-2 border-white flex items-center justify-center hover:bg-white hover:text-primary transition-colors group cursor-pointer">
+                <svg class="w-6 h-6 stroke-white group-hover:stroke-primary" fill="none" stroke-width="3"
+                    stroke-linecap="square" stroke-linejoin="miter" viewBox="0 0 24 24">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Messages Area -->
+        <div id="chat-messages" class="flex-1 overflow-y-auto px-5 py-5 flex flex-col gap-5 chat-scrollbar bg-primary">
+            <!-- Welcome message -->
+            <div class="chat-message-bot flex flex-col gap-1 items-start">
+                <span class="text-[0.7em] font-bold opacity-50 uppercase tracking-wider ml-1">AI Assistant</span>
+                <div
+                    class="border-2 border-white bg-transparent text-white text-[0.9em] font-medium leading-relaxed rounded-[5px] px-4 py-3 max-w-[90%]">
+                    Hi! I'm Suyash's AI assistant. Ask me about his work, skills, or projects. ⚡
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="flex items-center gap-2 px-4 py-4 border-t-2 border-white flex-shrink-0 bg-primary">
+            <input id="chat-input" type="text" placeholder="TYPE A MESSAGE..."
+                class="chat-input flex-1 bg-transparent border-2 border-white rounded-[5px] px-4 py-3
+                       text-white text-[0.9em] font-bold placeholder-white/50
+                       outline-none focus:bg-white focus:text-primary transition-colors focus:placeholder-primary/50" />
+            <button id="chat-send-btn" aria-label="Send message"
+                class="w-12 h-12 rounded-[5px] border-2 border-white bg-primary flex items-center justify-center flex-shrink-0
+                       hover:bg-white hover:text-primary transition-all group disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer">
+                <svg class="w-6 h-6 stroke-white group-hover:stroke-primary" fill="none" stroke-width="2"
+                    stroke-linecap="square" stroke-linejoin="miter" viewBox="0 0 24 24">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+            </button>
+        </div>
+    </div>
+
     <script src="js/script.js"></script>
 </body>
 

@@ -118,3 +118,167 @@ class Carousel {
 // Need to ensure capacity logic matches CSS breakpoints:
 // sm: w-full (1), md: w-1/2 (2), lg: w-1/3 (3)
 new Carousel('projects-track', 'projects-prev', 'projects-next', '#projects-track > div');
+
+// ================================================================
+// CHAT WIDGET
+// ================================================================
+
+const chatToggleBtn = document.getElementById('chat-toggle-btn');
+const chatWindow = document.getElementById('chat-window');
+const chatCloseBtn = document.getElementById('chat-close-btn');
+const chatMessages = document.getElementById('chat-messages');
+const chatInput = document.getElementById('chat-input');
+const chatSendBtn = document.getElementById('chat-send-btn');
+
+let chatIsOpen = false;
+
+function openChat() {
+    chatIsOpen = true;
+    chatWindow.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+
+    // Hide floating toggle to prevent overlap with the chat window (crucial on mobile)
+    chatToggleBtn.classList.add('hidden');
+
+    // Prevent body scroll on mobile when chat is open
+    if (window.innerWidth < 768) document.body.style.overflow = 'hidden';
+
+    // Slight delay to allow transition before focus
+    setTimeout(() => chatInput.focus(), 300);
+}
+
+function closeChat() {
+    chatIsOpen = false;
+    chatWindow.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+
+    // Show toggle again
+    chatToggleBtn.classList.remove('hidden');
+
+    document.body.style.overflow = '';
+}
+
+chatToggleBtn.addEventListener('click', () => chatIsOpen ? closeChat() : openChat());
+chatCloseBtn.addEventListener('click', closeChat);
+
+// ── Message helpers ──────────────────────────────────────────────
+
+function appendUserMessage(text) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'chat-message-user flex flex-col gap-1 items-end';
+    wrapper.innerHTML = `
+        <span class="text-[0.7em] font-bold opacity-50 uppercase tracking-wider mr-1">You</span>
+        <div class="border-2 border-white bg-white text-primary text-[0.9em] font-bold leading-relaxed
+                    rounded-[5px] px-4 py-3 max-w-[90%]">
+            ${escapeHtml(text)}
+        </div>`;
+    chatMessages.appendChild(wrapper);
+    scrollToBottom();
+}
+
+function appendBotMessage(text) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'chat-message-bot flex flex-col gap-1 items-start';
+    wrapper.innerHTML = `
+        <span class="text-[0.7em] font-bold opacity-50 uppercase tracking-wider ml-1">AI Assistant</span>
+        <div class="border-2 border-white bg-transparent text-white text-[0.9em] font-medium leading-relaxed
+                    rounded-[5px] px-4 py-3 max-w-[90%]">
+            ${escapeHtml(text)}
+        </div>`;
+    chatMessages.appendChild(wrapper);
+    scrollToBottom();
+}
+
+function showTypingIndicator() {
+    const indicator = document.createElement('div');
+    indicator.id = 'chat-typing-indicator';
+    indicator.className = 'chat-message-bot flex flex-col gap-1 items-start';
+    indicator.innerHTML = `
+        <span class="text-[0.7em] font-bold opacity-50 uppercase tracking-wider ml-1">AI Assistant</span>
+        <div class="border-2 border-white bg-transparent rounded-[5px] px-4 py-4 flex gap-1.5 items-center max-w-[90%]">
+            <div class="chat-typing-dot bg-white"></div>
+            <div class="chat-typing-dot bg-white"></div>
+            <div class="chat-typing-dot bg-white"></div>
+        </div>`;
+    chatMessages.appendChild(indicator);
+    scrollToBottom();
+}
+
+function removeTypingIndicator() {
+    const indicator = document.getElementById('chat-typing-indicator');
+    if (indicator) indicator.remove();
+}
+
+function scrollToBottom() {
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function escapeHtml(str) {
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+// ── API Integration ──────────────────────────────────────────────
+//
+// Replace this function to wire up your real backend / LLM API.
+// It receives the user's message string and must return a Promise
+// that resolves to the bot's reply string.
+//
+// Example skeleton:
+//   async function callChatAPI(userMessage) {
+//       const response = await fetch('/api/chat', {
+//           method: 'POST',
+//           headers: { 'Content-Type': 'application/json' },
+//           body: JSON.stringify({ message: userMessage }),
+//       });
+//       const data = await response.json();
+//       return data.reply;
+//   }
+//
+async function callChatAPI(userMessage) {
+    const response = await fetch('http://api-suyious-com.vercel.app/chat', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ message: userMessage })
+    });
+
+    if (!response.ok) {
+        throw new Error(`Chat API error: ${response.status} ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    return data.reply;
+}
+
+// ── Send logic ───────────────────────────────────────────────────
+
+async function sendMessage() {
+    const text = chatInput.value.trim();
+    if (!text) return;
+
+    chatInput.value = '';
+    chatSendBtn.disabled = true;
+
+    appendUserMessage(text);
+    showTypingIndicator();
+
+    try {
+        const reply = await callChatAPI(text);
+        removeTypingIndicator();
+        appendBotMessage(reply);
+    } catch (err) {
+        removeTypingIndicator();
+        appendBotMessage('Oops — something went wrong. Please try again.');
+        console.error('[Chat] API error:', err);
+    } finally {
+        chatSendBtn.disabled = false;
+        chatInput.focus();
+    }
+}
+
+chatSendBtn.addEventListener('click', sendMessage);
+chatInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage();
+    }
+});
