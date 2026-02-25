@@ -233,7 +233,7 @@ function escapeHtml(str) {
 //   }
 //
 async function callChatAPI(userMessage) {
-    const response = await fetch('http://api-suyious-com.vercel.app/chat', {
+    const response = await fetch('https://api-suyious-com.vercel.app/chat', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
